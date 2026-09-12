@@ -43,8 +43,18 @@ fun FinanceScreen(vm: FinanceViewModel) {
                 .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            SectionCard("Акции", vm.stocks) { row, field, v -> vm.setStock(row, field, v) } total@{ vm.stocksTotal }
-            SectionCard("Облигации", vm.bonds) { row, field, v -> vm.setBond(row, field, v) } total@{ vm.bondsTotal }
+            SectionCard(
+                title = "Акции",
+                rows = vm.stocks,
+                onChange = { row, field, v -> vm.setStock(row, field, v) },
+                total = { vm.stocksTotal }
+            )
+            SectionCard(
+                title = "Облигации",
+                rows = vm.bonds,
+                onChange = { row, field, v -> vm.setBond(row, field, v) },
+                total = { vm.bondsTotal }
+            )
 
             Card {
                 Column(Modifier.padding(12.dp)) {
