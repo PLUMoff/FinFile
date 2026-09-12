@@ -79,12 +79,12 @@ class FinanceViewModel(app: Application) : AndroidViewModel(app) {
         deposits[i] = v
         save("deposit", "ВТБ$i", "value", v)
     }
-    fun setCashSimple(v: Double) { cashSimple = v; save("cash", "Просто",  "value", v) }
-    fun setCashGifts(v: Double)  { cashGifts  = v; save("cash", "Подарки", "value", v) }
-    fun setCashWine(v: Double)   { cashWine   = v; save("cash", "Вино",    "value", v) }
-    fun setCardVTB(v: Double)    { cardVTB    = v; save("card", "ВТБ",   "value", v) }
-    fun setCardTink(v: Double)   { cardTink   = v; save("card", "Тинёк", "value", v) }
-    fun setCardAlfa(v: Double)   { cardAlfa   = v; save("card", "Альфа", "value", v) }
+    fun updateCashSimple(v: Double) { cashSimple = v; save("cash", "Просто",  "value", v) }
+    fun updateCashGifts(v: Double)  { cashGifts  = v; save("cash", "Подарки", "value", v) }
+    fun updateCashWine(v: Double)   { cashWine   = v; save("cash", "Вино",    "value", v) }
+    fun updateCardVTB(v: Double)    { cardVTB    = v; save("card", "ВТБ",   "value", v) }
+    fun updateCardTink(v: Double)   { cardTink   = v; save("card", "Тинёк", "value", v) }
+    fun updateCardAlfa(v: Double)   { cardAlfa   = v; save("card", "Альфа", "value", v) }
 
     private fun save(cat: String, name: String, field: String, value: Double) {
         viewModelScope.launch { repo.set(cat, name, field, value) }
