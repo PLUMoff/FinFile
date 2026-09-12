@@ -88,9 +88,9 @@ fun FinanceScreen(vm: FinanceViewModel) {
                 Column(Modifier.padding(12.dp)) {
                     Text("Наличные", fontWeight = FontWeight.Bold, fontSize = 18.sp)
                     Spacer(Modifier.height(8.dp))
-                    MoneyField("Просто",  vm.cashSimple) { vm.setCashSimple(it) }
-                    MoneyField("Подарки", vm.cashGifts)  { vm.setCashGifts(it)  }
-                    MoneyField("Вино",    vm.cashWine)   { vm.setCashWine(it)   }
+                    MoneyField("Просто",  vm.cashSimple) { vm.updateCashSimple(it) }
+                    MoneyField("Подарки", vm.cashGifts)  { vm.updateCashGifts(it)  }
+                    MoneyField("Вино",    vm.cashWine)   { vm.updateCashWine(it)   }
                     TotalRow("Итого", vm.cashTotal)
                 }
             }
@@ -99,9 +99,9 @@ fun FinanceScreen(vm: FinanceViewModel) {
                 Column(Modifier.padding(12.dp)) {
                     Text("Карты", fontWeight = FontWeight.Bold, fontSize = 18.sp)
                     Spacer(Modifier.height(8.dp))
-                    MoneyField("ВТБ",    vm.cardVTB)  { vm.setCardVTB(it)  }
-                    MoneyField("Тинёк",  vm.cardTink) { vm.setCardTink(it) }
-                    MoneyField("Альфа",  vm.cardAlfa) { vm.setCardAlfa(it) }
+                    MoneyField("ВТБ",    vm.cardVTB)  { vm.updateCardVTB(it)  }
+                    MoneyField("Тинёк",  vm.cardTink) { vm.updateCardTink(it) }
+                    MoneyField("Альфа",  vm.cardAlfa) { vm.updateCardAlfa(it) }
                     TotalRow("Итого", vm.cardsTotal)
                 }
             }
